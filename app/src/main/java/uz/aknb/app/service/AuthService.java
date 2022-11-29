@@ -7,7 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import security.service.JwtProvider;
+// import security.service.JwtProvider;
 import uz.aknb.app.dto.AuthenticationResponse;
 import uz.aknb.app.dto.LoginRequest;
 import uz.aknb.app.dto.RegisterRequest;
@@ -24,7 +24,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final MailService mailService;
-    private final JwtProvider jwtProvider;
+    // private final JwtProvider jwtProvider;
     private final UserMapper mapper;
 
     public AuthService(AuthenticationManager authenticationManager,
@@ -32,14 +32,14 @@ public class AuthService {
                        PasswordEncoder passwordEncoder,
                        UserRepository userRepository,
                        MailService mailService,
-                       JwtProvider jwtProvider,
+                    //    JwtProvider jwtProvider,
                        UserMapper mapper) {
         this.authenticationManager = authenticationManager;
         this.verifyTokenService = verifyTokenService;
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.mailService = mailService;
-        this.jwtProvider = jwtProvider;
+        // this.jwtProvider = jwtProvider;
         this.mapper = mapper;
     }
 
@@ -88,7 +88,7 @@ public class AuthService {
         );
 
         SecurityContextHolder.getContext().setAuthentication(authenticate);
-        String token = jwtProvider.generateToken(authenticate);
-        return new AuthenticationResponse(token, request.getEmail());
+        // String token = jwtProvider.generateToken(authenticate);
+        return new AuthenticationResponse("token", request.getEmail());
     }
 }

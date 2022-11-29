@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  url: localhost:8080
+
+mail:
+  reply:
+    from: noreply@blahblah.com
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem
+
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  profiles:
+    active: prod

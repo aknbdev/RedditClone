@@ -1,6 +1,3 @@
-server:
-  port: 8080
-  url: localhost:8080
 
 spring:
   datasource:
@@ -15,11 +12,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    
-  mvc:
-    hiddenmethod:
-      filter:
-        enabled: true
   mail:
     host: smtp.gmail.com
     port: 587
@@ -34,8 +26,4 @@ spring:
             required: true
           connectiontimeout: 5000
           timeout: 3000
-          writetimeout: 5000
-
-mail:
-  reply:
-    from: noreply@blahblah.com
+          writetimeout: 5000 
